@@ -1,10 +1,13 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://qqwa3nsm20f1"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://qqwa3nsm20f1"]
 
 [ext_resource type="Texture2D" uid="uid://737i4gpo70fo" path="res://fence.png" id="1_v3wud"]
 [ext_resource type="Texture2D" uid="uid://cejqqdx4inqv" path="res://grass.png" id="2_tb272"]
 [ext_resource type="Texture2D" uid="uid://cdmmua0lp03se" path="res://grass_stuff.png" id="3_04k6r"]
+[ext_resource type="Texture2D" uid="uid://dxikyn2cdc5id" path="res://fence_corner_4.png" id="3_th286"]
 [ext_resource type="Texture2D" uid="uid://br3seqyweooni" path="res://fence_corner.png" id="4_0d2u4"]
 [ext_resource type="Texture2D" uid="uid://caopx0tiit4yj" path="res://fence_side.png" id="5_o0l4m"]
+[ext_resource type="Texture2D" uid="uid://c7x7fbtkwj1gp" path="res://fence_corner_7.png" id="7_hskl8"]
+[ext_resource type="Texture2D" uid="uid://c4cbquvafq2m6" path="res://fence_side_4.png" id="14_1o4xv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
 texture = ExtResource("1_v3wud")
@@ -16,6 +19,18 @@ texture_region_size = Vector2i(64, 64)
 texture = ExtResource("2_tb272")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5fuw"]
+texture = ExtResource("7_hskl8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mq80u"]
+texture = ExtResource("3_th286")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.4656906, -32, -32, -32, -32, 32, 0.4656906, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0l4m"]
 texture = ExtResource("3_04k6r")
@@ -34,6 +49,12 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 4.233555, -32, 4.490135, 32, -32, 32)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hji5v"]
+texture = ExtResource("14_1o4xv")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.7075348, -32, 32, -32, 32, 32, -2.017994, 32)
+
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
@@ -42,3 +63,6 @@ sources/2 = SubResource("TileSetAtlasSource_o0l4m")
 sources/0 = SubResource("TileSetAtlasSource_qxrlw")
 sources/4 = SubResource("TileSetAtlasSource_lcm1p")
 sources/5 = SubResource("TileSetAtlasSource_mqgna")
+sources/8 = SubResource("TileSetAtlasSource_hji5v")
+sources/14 = SubResource("TileSetAtlasSource_p5fuw")
+sources/15 = SubResource("TileSetAtlasSource_mq80u")

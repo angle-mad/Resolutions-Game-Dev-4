@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkaqjphsry0b6"]
+
+[ext_resource type="Script" uid="uid://csmus1eyyn6sr" path="res://Scenes/gate_open.gd" id="1_gmvdn"]
+[ext_resource type="Texture2D" uid="uid://o2omh46a315a" path="res://fence_gate.png" id="1_y6lya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmvdn"]
+size = Vector2(64, 53)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kl20n"]
+radius = 31.0
+height = 62.0
+
+[node name="Gate" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_gmvdn")
+
+[node name="Gate_Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_gmvdn")
+debug_color = Color(0.8851069, 0.2647867, 0.5192344, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y6lya")
+flip_v = true
+
+[node name="Open_Gate" type="Area2D" parent="."]
+
+[node name="Gate_Open" type="CollisionShape2D" parent="Open_Gate"]
+position = Vector2(0, -34)
+shape = SubResource("CapsuleShape2D_kl20n")
+
+[connection signal="body_entered" from="Open_Gate" to="." method="_on_open_gate_body_entered"]
